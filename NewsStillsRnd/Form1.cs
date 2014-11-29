@@ -28,12 +28,14 @@ namespace NewsStillsRnd
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = false;
-            LogWriter("===============");
             MyDBTableAdapters.RENDERTableAdapter Ta = new MyDBTableAdapters.RENDERTableAdapter();
             MyDB.RENDERDataTable Dt = Ta.selectTasks("aksekhabari");
 
             if (Dt.Rows.Count == 1)
             {
+                richTextBox1.Text = "";
+
+
                 LogWriter("Render task found");
                 //New task:
 
@@ -197,6 +199,20 @@ namespace NewsStillsRnd
 
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.White;
+            button1.Text = "Started";
+            button1.BackColor = Color.Red;
+
+            timer1_Tick(null, null);
+
+
+            button1.ForeColor = Color.White;
+            button1.Text = "Start";
+            button1.BackColor = Color.Navy;
         }
     }
 }
