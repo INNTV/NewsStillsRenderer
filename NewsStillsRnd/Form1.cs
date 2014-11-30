@@ -91,12 +91,12 @@ namespace NewsStillsRnd
                         ).ToString();
 
 
-                    LogWriter("Start Copy Video:" + PlayOutFolder + "\\VIDEO\\" + PlyFileName + ".mp4");
+                    LogWriter("Start Copy Video:" + PlayOutFolder + "\\VIDEO\\" + PlyFileName + ".avi");
 
-                    File.Copy(System.Configuration.ConfigurationSettings.AppSettings["OutputPathFile"], PlayOutFolder + "\\VIDEO\\" + PlyFileName + ".mp4");
+                    File.Copy(System.Configuration.ConfigurationSettings.AppSettings["OutputPathFile"], PlayOutFolder + "\\VIDEO\\" + PlyFileName + ".avi");
 
 
-                    LogWriter("End Copy Video:" + PlayOutFolder + "\\VIDEO\\" + PlyFileName + ".mp4");
+                    LogWriter("End Copy Video:" + PlayOutFolder + "\\VIDEO\\" + PlyFileName + ".avi");
 
 
                     LogWriter("Copy Thumbnail" + PlayOutFolder + "\\THUMB\\" + PlyFileName + ".jpg");
