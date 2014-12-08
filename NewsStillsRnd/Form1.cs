@@ -15,7 +15,6 @@ namespace NewsStillsRnd
         {
             InitializeComponent();
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult Rs = MessageBox.Show("آیا از برنامه خارج می شوید", "خروج از برنامه",
@@ -200,7 +199,6 @@ namespace NewsStillsRnd
 
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             button1.ForeColor = Color.White;
