@@ -89,7 +89,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "News Stills Renderer V1.1 2014-11-29";
+            this.Text = "News Stills Renderer V1.2 2015-01-12";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.groupBox2.ResumeLayout(false);

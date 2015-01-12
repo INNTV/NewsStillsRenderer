@@ -13,7 +13,7 @@ namespace NewsStillsRnd
             Process proc = new Process();
             proc.StartInfo.FileName = "\"" + Obj.AeRenderPath + "\"";
 
-            DirectoryInfo Dir = new DirectoryInfo(Obj.DestDirectory);
+            DirectoryInfo Dir = new DirectoryInfo(Path.GetDirectoryName(Obj.DestFullFileName));
             if (!Dir.Exists)
             {
                 Dir.Create();
@@ -42,7 +42,6 @@ namespace NewsStillsRnd
     public class RenderObject
     {
         public string AeRenderPath { get; set; }
-        public string DestDirectory { get; set; }
         public string DestFullFileName { get; set; }
         public string AeProjectPath { get; set; }
         public string CompositionName { get; set; }
