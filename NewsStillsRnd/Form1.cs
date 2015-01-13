@@ -31,10 +31,10 @@ namespace NewsStillsRnd
 
         public void LogWriter(string Txt)
         {
-            if (richTextBox1.Lines.Length > 500)
-            {
-                richTextBox1.Text = "";
-            }
+        //    if (richTextBox1.Lines.Length > 500)
+        //    {
+        //        richTextBox1.Text = "";
+        //    }
             richTextBox1.Text += Txt + "  [" + DateTime.Now.ToString() + "] \n";
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret();
@@ -102,7 +102,7 @@ namespace NewsStillsRnd
                                 Directory.CreateDirectory(PlayOutFolder + "\\VIDEO");
                             }
 
-                            string PlyFileName = Cond_Ta.InsertPly("Auto AE Renderer",
+                            string PlyFileName = Cond_Ta.InsertPly("playout01",
                                 rw["c_id"].ToString(),
                                 "1",
                                 _config.VideoDuration[i],
