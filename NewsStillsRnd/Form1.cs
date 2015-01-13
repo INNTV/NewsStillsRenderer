@@ -81,10 +81,16 @@ namespace NewsStillsRnd
                     {
                         if (Render(i))
                         {
+
+                            try
+                            {
+
+
+
                             MyDBTableAdapters.CONDUCTORTableAdapter Cond_Ta = new MyDBTableAdapters.CONDUCTORTableAdapter();
 
                             //create dest dir if not exist in san
-                            string PlayOutFolderDate = string.Format("{0:0000},{1:00},{2:00}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                            string PlayOutFolderDate = string.Format("{0:0000}{1:00}{2:00}", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
                             string PlayOutFolder = _config.PlayOutRoot + "\\" + PlayOutFolderDate;
 
                             if (!Directory.Exists(PlayOutFolder + "\\THUMB"))
@@ -120,6 +126,13 @@ namespace NewsStillsRnd
 
                             LogWriter("Task Done");
 
+                            }
+                            catch (Exception ex)
+                            {
+                                LogWriter(ex.Message);
+
+                            }
+
                         }
                         else
                         {
@@ -135,7 +148,7 @@ namespace NewsStillsRnd
                 }
             }
 
-            timer1.Enabled = true;
+            //timer1.Enabled = true;
         }
 
         private bool CopyImages(int index, int conductorId)
@@ -146,7 +159,7 @@ namespace NewsStillsRnd
                 string ImageNameFormat = _config.ImageName[index];
 
                 MyDBTableAdapters.SlideTableAdapter slideTa = new MyDBTableAdapters.SlideTableAdapter();
-                MyDB.SlideDataTable SlideDt = slideTa.selectSlides(10, conductorId);
+                MyDB.SlideDataTable SlideDt = slideTa.selectSlides(int.Parse(_config.ImageCount[index]), conductorId);
 
                 try
                 {
@@ -156,12 +169,21 @@ namespace NewsStillsRnd
                 catch { }
                 Directory.CreateDirectory(ImageRootDirectory);
 
-                for (int i = 0; i < SlideDt.Rows.Count; i++)
+                if (SlideDt.Rows.Count ==int.Parse(_config.ImageCount[index]))
                 {
-                    string FileName = ImageRootDirectory + ImageNameFormat + (i + 1).ToString() + ".png";
-                    File.Copy(SlideDt.Rows[i]["FilePath"].ToString(), FileName, true);
+
+                    for (int i = 0; i < SlideDt.Rows.Count; i++)
+                    {
+                        string FileName = ImageRootDirectory + ImageNameFormat + (i + 1).ToString() + ".png";
+                        File.Copy(SlideDt.Rows[i]["FilePath"].ToString(), FileName, true);
+                    }
+                    return true;
                 }
-                return true;
+                else
+                {
+                    LogWriter("Error in image count: " + SlideDt.Rows.Count + " of " + _config.ImageCount[index]);
+                    return false;
+                }
             }
             catch (Exception ex)
             {
@@ -192,18 +214,18 @@ namespace NewsStillsRnd
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    richTextBox1.Text = richTextBox1.Text.Remove(Lngth, richTextBox1.Text.Length - Lngth);
+                    //richTextBox1.Text = richTextBox1.Text.Remove(Lngth, richTextBox1.Text.Length - Lngth);
                     richTextBox1.SelectionStart = richTextBox1.Text.Length;
                     richTextBox1.ScrollToCaret();
                     Application.DoEvents();
 
-                    richTextBox1.AppendText(line + " >> FROM : 1589 FRAMES");
+                    richTextBox1.AppendText(line + " >> FROM : "+_config.Frame[index]+" FRAMES");
                     richTextBox1.SelectionStart = richTextBox1.Text.Length;
                     richTextBox1.ScrollToCaret();
                     Application.DoEvents();
                 }
 
-                richTextBox1.Text = richTextBox1.Text.Remove(Lngth, richTextBox1.Text.Length - Lngth);
+               // richTextBox1.Text = richTextBox1.Text.Remove(Lngth, richTextBox1.Text.Length - Lngth);
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
                 Application.DoEvents();

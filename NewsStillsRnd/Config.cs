@@ -15,9 +15,12 @@ namespace NewsStillsRnd
         public List<string> AeProjectFile { get; set; }
         public List<string> Composition { get; set; }
         public List<string> ImageRoot { get; set; }
+        public List<string> ImageCount { get; set; }
         public List<string> GraphicActId { get; set; }
         public List<string> ImageName { get; set; }
         public List<string> VideoDuration { get; set; }
+        public List<string> Frame { get; set; }
+
 
         
 
@@ -32,9 +35,12 @@ namespace NewsStillsRnd
             AeProjectFile = System.Configuration.ConfigurationSettings.AppSettings["AeProjectFile"].Trim().Split(',').ToList();
             Composition = System.Configuration.ConfigurationSettings.AppSettings["Composition"].Trim().Split(',').ToList();
             ImageRoot = System.Configuration.ConfigurationSettings.AppSettings["ImageRoot"].Trim().Split(',').ToList();
+            ImageCount = System.Configuration.ConfigurationSettings.AppSettings["ImageCount"].Trim().Split(',').ToList();
             ImageName = System.Configuration.ConfigurationSettings.AppSettings["ImageName"].Trim().Split(',').ToList();
             GraphicActId = System.Configuration.ConfigurationSettings.AppSettings["GraphicActId"].Trim().Split(',').ToList();
             VideoDuration = System.Configuration.ConfigurationSettings.AppSettings["VideoDuration"].Trim().Split(',').ToList();
+            Frame = System.Configuration.ConfigurationSettings.AppSettings["Frame"].Trim().Split(',').ToList();
+
 
 
         }
