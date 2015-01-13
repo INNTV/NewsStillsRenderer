@@ -148,7 +148,7 @@ namespace NewsStillsRnd
                 }
             }
 
-            //timer1.Enabled = true;
+            timer1.Enabled = true;
         }
 
         private bool CopyImages(int index, int conductorId)
@@ -214,7 +214,7 @@ namespace NewsStillsRnd
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    //richTextBox1.Text = richTextBox1.Text.Remove(Lngth, richTextBox1.Text.Length - Lngth);
+                    richTextBox1.Text = richTextBox1.Text.Remove(Lngth, richTextBox1.Text.Length - Lngth);
                     richTextBox1.SelectionStart = richTextBox1.Text.Length;
                     richTextBox1.ScrollToCaret();
                     Application.DoEvents();
@@ -225,7 +225,7 @@ namespace NewsStillsRnd
                     Application.DoEvents();
                 }
 
-               // richTextBox1.Text = richTextBox1.Text.Remove(Lngth, richTextBox1.Text.Length - Lngth);
+                richTextBox1.Text = richTextBox1.Text.Remove(Lngth, richTextBox1.Text.Length - Lngth);
                 richTextBox1.SelectionStart = richTextBox1.Text.Length;
                 richTextBox1.ScrollToCaret();
                 Application.DoEvents();
