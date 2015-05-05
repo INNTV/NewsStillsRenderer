@@ -27,19 +27,19 @@ namespace NewsStillsRnd
                 
         public Configuration()
         {
-            AeRenderExePath = System.Configuration.ConfigurationSettings.AppSettings["AeRenderExePath"].Trim();
-            PlayOutRoot = System.Configuration.ConfigurationSettings.AppSettings["PlayOutRoot"].Trim();
+            AeRenderExePath = System.Configuration.ConfigurationSettings.AppSettings["AeRenderExePath"];
+            PlayOutRoot = System.Configuration.ConfigurationSettings.AppSettings["PlayOutRoot"];
             
-            SqlFilter = System.Configuration.ConfigurationSettings.AppSettings["SqlFilter"].Trim().Split(',').ToList();
-            OutputPathFile = System.Configuration.ConfigurationSettings.AppSettings["OutputPathFile"].Trim().Split(',').ToList();
-            AeProjectFile = System.Configuration.ConfigurationSettings.AppSettings["AeProjectFile"].Trim().Split(',').ToList();
-            Composition = System.Configuration.ConfigurationSettings.AppSettings["Composition"].Trim().Split(',').ToList();
-            ImageRoot = System.Configuration.ConfigurationSettings.AppSettings["ImageRoot"].Trim().Split(',').ToList();
-            ImageCount = System.Configuration.ConfigurationSettings.AppSettings["ImageCount"].Trim().Split(',').ToList();
-            ImageName = System.Configuration.ConfigurationSettings.AppSettings["ImageName"].Trim().Split(',').ToList();
-            GraphicActId = System.Configuration.ConfigurationSettings.AppSettings["GraphicActId"].Trim().Split(',').ToList();
-            VideoDuration = System.Configuration.ConfigurationSettings.AppSettings["VideoDuration"].Trim().Split(',').ToList();
-            Frame = System.Configuration.ConfigurationSettings.AppSettings["Frame"].Trim().Split(',').ToList();
+            SqlFilter = System.Configuration.ConfigurationSettings.AppSettings["SqlFilter"].Split(',').ToList();
+            OutputPathFile = System.Configuration.ConfigurationSettings.AppSettings["OutputPathFile"].Split(',').ToList();
+            AeProjectFile = System.Configuration.ConfigurationSettings.AppSettings["AeProjectFile"].Split(',').ToList();
+            Composition = System.Configuration.ConfigurationSettings.AppSettings["Composition"].Split(',').ToList();
+            ImageRoot = System.Configuration.ConfigurationSettings.AppSettings["ImageRoot"].Split(',').ToList();
+            ImageCount = System.Configuration.ConfigurationSettings.AppSettings["ImageCount"].Split(',').ToList();
+            ImageName = System.Configuration.ConfigurationSettings.AppSettings["ImageName"].Split(',').ToList();
+            GraphicActId = System.Configuration.ConfigurationSettings.AppSettings["GraphicActId"].Split(',').ToList();
+            VideoDuration = System.Configuration.ConfigurationSettings.AppSettings["VideoDuration"].Split(',').ToList();
+            Frame = System.Configuration.ConfigurationSettings.AppSettings["Frame"].Split(',').ToList();
 
 
 

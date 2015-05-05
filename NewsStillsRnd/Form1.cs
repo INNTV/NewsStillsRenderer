@@ -137,11 +137,19 @@ namespace NewsStillsRnd
                         else
                         {
                             LogWriter("Error in render: " + _config.SqlFilter[i]);
+                            LogWriter(" Delete order DB: " + _config.SqlFilter[i]);
+                            Ta.Delete_Order((int.Parse(rw["id"].ToString()));
+
                         }
                     }
                     else
                     {
                         LogWriter("Error in copy image: " + _config.SqlFilter[i]);
+                        
+                        LogWriter(" Delete order DB: " + _config.SqlFilter[i]);
+                        Ta.Delete_Order((int.Parse(rw["id"].ToString()));
+
+
                     }
 
                     break;
