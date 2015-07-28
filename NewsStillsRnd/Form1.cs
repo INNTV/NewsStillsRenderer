@@ -138,7 +138,7 @@ namespace NewsStillsRnd
                         {
                             LogWriter("Error in render: " + _config.SqlFilter[i]);
                             LogWriter(" Delete order DB: " + _config.SqlFilter[i]);
-                            Ta.Delete_Order((int.Parse(rw["id"].ToString()));
+                            Ta.Delete_Order(int.Parse(rw["id"].ToString()));
 
                         }
                     }
@@ -147,7 +147,7 @@ namespace NewsStillsRnd
                         LogWriter("Error in copy image: " + _config.SqlFilter[i]);
                         
                         LogWriter(" Delete order DB: " + _config.SqlFilter[i]);
-                        Ta.Delete_Order((int.Parse(rw["id"].ToString()));
+                        Ta.Delete_Order(int.Parse(rw["id"].ToString()));
 
 
                     }
